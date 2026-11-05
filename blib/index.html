@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blibli-印尼电商平台购物指南_在线购物_正品商城</title>
+<meta name="description" content="Blibli 是印度尼西亚综合性电商平台，提供电子产品、时尚服饰、生活家居与日常快消等多品类商品，支持官方旗舰店入驻、便捷配送与本地支付方式。本页介绍 Blibli 的购物入口、品类结构、下单流程与常见问题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b57d0'/%3E%3Cpath d='M18 20h16a10 10 0 0 1 0 20H18z' fill='none' stroke='%23fff' stroke-width='5' stroke-linejoin='round'/%3E%3Ccircle cx='45' cy='45' r='5' fill='%23ffd43b'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --blue:#0b57d0;
+    --blue-deep:#083a8c;
+    --ink:#12203a;
+    --muted:#5a6b85;
+    --line:#dfe6f2;
+    --bg:#f6f9ff;
+    --amber:#ffb703;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* Header */
+  header.site{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:30;
+  }
+  .head-inner{
+    display:flex;align-items:center;gap:18px;
+    min-height:66px;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);letter-spacing:.2px;}
+  .brand:hover{text-decoration:none;}
+  .brand svg{width:34px;height:34px;flex:none;}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    padding:8px 12px;border-radius:8px;color:var(--ink);
+    font-size:15px;font-weight:600;
+  }
+  nav.main a:hover{background:#eef4ff;text-decoration:none;color:var(--blue-deep);}
+  .head-cta{
+    background:var(--blue);color:#fff;font-weight:700;font-size:15px;
+    padding:9px 18px;border-radius:9px;white-space:nowrap;
+  }
+  .head-cta:hover{background:var(--blue-deep);text-decoration:none;color:#fff;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,#0b57d0 0%,#0a47a8 55%,#083a8c 100%);
+    color:#fff;padding:52px 0 56px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+    border-radius:50%;background:rgba(255,255,255,.07);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;position:relative;z-index:2;}
+  .kicker{
+    display:inline-block;font-size:13px;font-weight:700;letter-spacing:1px;
+    background:rgba(255,255,255,.16);padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{font-size:44px;line-height:1.2;margin:0 0 16px;font-weight:800;letter-spacing:.5px;}
+  .hero p.lead{font-size:17px;margin:0 0 26px;color:#e4edff;max-width:36em;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:12px 24px;border-radius:10px;font-weight:700;font-size:16px;border:0;cursor:pointer;
+  }
+  .btn-primary{background:var(--amber);color:#20180a;}
+  .btn-primary:hover{background:#ffc93c;text-decoration:none;color:#20180a;}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4);}
+  .btn-ghost:hover{background:rgba(255,255,255,.22);text-decoration:none;color:#fff;}
+  .hero-card{
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+    border-radius:16px;padding:22px;backdrop-filter:blur(2px);
+  }
+  .hero-card h2{font-size:15px;margin:0 0 12px;color:#fff;font-weight:700;letter-spacing:.5px;}
+  .hero-card ul{margin:0;padding-left:18px;font-size:14.5px;color:#e4edff;}
+  .hero-card li{margin-bottom:8px;}
+  .hero-card li:last-child{margin-bottom:0;}
+
+  /* Section base */
+  section{padding:56px 0;}
+  section.alt{background:#fff;}
+  .sec-head{max-width:720px;margin-bottom:30px;}
+  h2.sec-title{font-size:28px;margin:0 0 10px;font-weight:800;line-height:1.3;}
+  .sec-sub{margin:0;color:var(--muted);font-size:16px;}
+
+  /* Category grid */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cat{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .cat .ico{
+    width:42px;height:42px;border-radius:11px;background:#eaf1ff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:4px;
+  }
+  .cat .ico svg{width:22px;height:22px;}
+  .cat h3{font-size:17px;margin:0;font-weight:700;}
+  .cat p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.7;}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;}
+  .step{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;
+    position:relative;
+  }
+  .step::before{
+    counter-increment:step;content:counter(step);
+    display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;
+    font-size:14px;font-weight:700;margin-bottom:10px;
+  }
+  .step h3{font-size:16px;margin:0 0 6px;font-weight:700;}
+  .step p{margin:0;font-size:14.3px;color:var(--muted);}
+
+  /* Feature / text block */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;}
+  .split p{margin:0 0 14px;font-size:16px;color:#2a3a56;}
+  .split p:last-child{margin-bottom:0;}
+  .aside{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;
+  }
+  .aside h3{font-size:17px;margin:0 0 14px;font-weight:700;}
+  .aside ul{margin:0;padding-left:18px;font-size:15px;color:#2a3a56;}
+  .aside li{margin-bottom:10px;}
+  .aside li:last-child{margin-bottom:0;}
+
+  /* FAQ */
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .faq-item{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+  }
+  .faq-item h3{font-size:16px;margin:0 0 8px;font-weight:700;color:var(--blue-deep);}
+  .faq-item p{margin:0;font-size:14.8px;color:#33445f;}
+
+  /* CTA strip */
+  .cta-strip{
+    background:linear-gradient(120deg,#083a8c,#0b57d0);
+    color:#fff;border-radius:18px;padding:38px 34px;
+    display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+  }
+  .cta-strip h2{margin:0 0 8px;font-size:24px;font-weight:800;}
+  .cta-strip p{margin:0;color:#dbe7ff;font-size:15.5px;max-width:38em;}
+
+  /* Footer */
+  footer.site{
+    background:#0d1a30;color:#b9c7de;padding:40px 0 28px;margin-top:8px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:#fff;margin-bottom:12px;}
+  .foot-brand svg{width:28px;height:28px;}
+  footer.site p{margin:0 0 10px;font-size:14.2px;line-height:1.75;}
+  footer.site h4{color:#fff;font-size:15px;margin:0 0 12px;font-weight:700;}
+  footer.site ul{list-style:none;margin:0;padding:0;font-size:14.2px;}
+  footer.site li{margin-bottom:8px;}
+  footer.site a{color:#b9c7de;}
+  footer.site a:hover{color:#fff;}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.14);margin-top:30px;padding-top:18px;
+    font-size:13.2px;color:#8fa0bb;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    h1{font-size:36px;}
+    .cat-grid{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;gap:26px;}
+    .faq{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .head-inner{min-height:auto;padding:12px 0;gap:10px;}
+    nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    nav.main a{white-space:nowrap;font-size:14px;padding:7px 10px;}
+    .head-cta{margin-left:auto;}
+    .hero{padding:34px 0 40px;}
+    h1{font-size:29px;}
+    .hero p.lead{font-size:15.5px;}
+    section{padding:38px 0;}
+    h2.sec-title{font-size:23px;}
+    .cat-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .cta-strip{padding:26px 22px;}
+    .cta-strip h2{font-size:21px;}
+    .foot-grid{grid-template-columns:1fr;gap:24px;}
+    .brand{font-size:18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="Blibli 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0b57d0"/>
+        <path d="M18 20h16a10 10 0 0 1 0 20H18z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="45" cy="45" r="5" fill="#ffd43b"/>
+      </svg>
+      <span>Blibli</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#kategori">品类频道</a>
+      <a href="#cara">下单流程</a>
+      <a href="#layanan">平台服务</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="head-cta" href="#kategori">开始选购</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">印度尼西亚综合电商平台</span>
+        <h1>Blibli</h1>
+        <p class="lead">Blibli 汇集官方旗舰店、本地卖家与品牌直营商品，覆盖电子数码、时尚服饰、家居生活与日常快消。在这里可以先比价、再看评价，确认正品来源与配送时效后完成下单。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kategori">浏览品类频道</a>
+          <a class="btn btn-ghost" href="#cara">了解下单流程</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="平台要点">
+        <h2>访问者最关心的事</h2>
+        <ul>
+          <li>商品是否来自官方或授权店铺</li>
+          <li>配送到所在城市需要多久</li>
+          <li>支持哪些本地支付与分期方式</li>
+          <li>退换货与售后如何发起</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="kategori">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">Blibli 的主要品类频道</h2>
+        <p class="sec-sub">平台以多品类综合商城为定位，以下四个方向是 Blibli 访问者最常进入的区域，适合作为第一次浏览的起点。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>电子数码</h3>
+          <p>手机、笔记本、耳机与家用电器是 Blibli 的核心品类，品牌官方店铺通常标注保修范围与售后网点，购买前可核对型号与本地电压规格。</p>
+        </article>
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l1.5 4h9L18 3"/><path d="M4 7h16l-1.5 13h-13z"/></svg>
+          </div>
+          <h3>时尚服饰</h3>
+          <p>本地设计师品牌与国际快时尚并存，尺码表多按亚洲版型标注。建议先看买家晒图与退换条款，再决定颜色与尺码组合。</p>
+        </article>
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/></svg>
+          </div>
+          <h3>家居生活</h3>
+          <p>厨房用具、收纳、床品与小型家具适合一次性凑单。Blibli 的部分商品支持大件配送，下单页会单独提示安装与上楼服务范围。</p>
+        </article>
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          </div>
+          <h3>日常快消</h3>
+          <p>洗护、母婴、食品与饮料等高频品类常与本地超市合作供货，保质期与批次信息在商品详情中标注，适合按周期补货。</p>
+        </article>
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>限时促销</h3>
+          <p>平台在固定时段推出闪购与优惠券，价格与库存随时变化。参与前请确认券的使用门槛、适用店铺与有效期，避免结算时失效。</p>
+        </article>
+        <article class="cat">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+          </div>
+          <h3>订单与账单</h3>
+          <p>在账户中心可查看订单状态、物流轨迹与电子发票。企业采购可申请统一开票，具体抬头与税号在结算页填写。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">在 Blibli 下单的四个步骤</h2>
+        <p class="sec-sub">从搜索到收货，流程与多数综合电商一致，差别主要在本地支付方式与配送覆盖范围。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>搜索与筛选</h3>
+          <p>输入型号或品类关键词，用价格区间、店铺类型与评分缩小范围，优先选择标注官方或授权的店铺。</p>
+        </div>
+        <div class="step">
+          <h3>核对商品详情</h3>
+          <p>确认规格、保修年限、发货地与预计送达时间，查看近期评价中关于包装与实物差异的反馈。</p>
+        </div>
+        <div class="step">
+          <h3>结算与支付</h3>
+          <p>选择配送地址与物流方式，使用本地银行转账、电子钱包或分期付款，提交前复核优惠券是否已抵扣。</p>
+        </div>
+        <div class="step">
+          <h3>收货与售后</h3>
+          <p>签收时检查外包装完整性，遇到错发或破损可在订单页发起退换，保留开箱照片作为凭证。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="layanan">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2 class="sec-title">Blibli 的平台服务与使用建议</h2>
+          <p>Blibli 以自营与第三方卖家并行的方式运营，商品页会标明店铺主体。对价格敏感的用户可以关注同款在不同店铺的报价差异，但更应留意保修由谁承担、发票由谁开具。</p>
+          <p>配送方面，平台根据发货地与收货城市给出预计时效，跨岛订单通常需要更长周期。若为节日前采购，建议提前留出缓冲时间，并在下单页确认是否支持改址。</p>
+          <p>支付环节，Blibli 接入多家本地银行与电子钱包，部分商品支持分期。分期会涉及手续费与资质审核，实际可用方案以结算页显示的选项为准。</p>
+          <p>售后环节，平台提供退换货申请入口，能否通过取决于商品类别与店铺政策。电子产品通常需要检测报告，服饰类则更关注吊牌与洗涤状态是否完好。</p>
+        </div>
+        <aside class="aside">
+          <h3>下单前的核对清单</h3>
+          <ul>
+            <li>店铺是否为官方旗舰店或授权经销商</li>
+            <li>商品规格是否与本地使用条件匹配</li>
+            <li>预计送达时间是否满足使用计划</li>
+            <li>优惠券门槛与有效期是否已确认</li>
+            <li>退换货政策与运费承担方是否清楚</li>
+            <li>发票抬头与税号是否填写正确</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">关于 Blibli 的常见问题</h2>
+        <p class="sec-sub">以下回答围绕访问者最常提出的四类疑问，具体政策以平台页面当期展示为准。</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Blibli 上的商品都是正品吗？</h3>
+          <p>平台设有官方店铺与授权卖家体系，并标注店铺类型。建议优先选择带官方标识的店铺，并保留订单与发票，以便在需要时核对来源。</p>
+        </div>
+        <div class="faq-item">
+          <h3>可以配送到雅加达以外地区吗？</h3>
+          <p>配送范围覆盖印尼多个主要城市与部分偏远地区，具体可达性由发货地与物流商决定。下单页会显示预计时效，跨岛订单时间更长。</p>
+        </div>
+        <div class="faq-item">
+          <h3>支持哪些支付方式？</h3>
+          <p>常见方式包括本地银行转账、电子钱包与信用卡，部分商品支持分期付款。可用选项随账户与商品变化，以结算页为准。</p>
+        </div>
+        <div class="faq-item">
+          <h3>收到商品有问题怎么办？</h3>
+          <p>可在订单页发起退换货申请，说明问题并上传照片。是否受理取决于商品类别与店铺售后政策，建议在签收后尽快处理。</p>
+        </div>
+      </div>
+
+      <div class="cta-strip" style="margin-top:40px;">
+        <div>
+          <h2>从品类频道开始你的 Blibli 购物</h2>
+          <p>先确定需求品类，再比价与核对店铺资质，最后确认配送与售后条款。按这个顺序浏览，能减少下单后的反复沟通。</p>
+        </div>
+        <a class="btn btn-primary" href="#kategori">进入品类频道</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0b57d0"/>
+            <path d="M18 20h16a10 10 0 0 1 0 20H18z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="45" cy="45" r="5" fill="#ffd43b"/>
+          </svg>
+          <span>Blibli</span>
+        </div>
+        <p>本页为 Blibli 主题信息首页，梳理品类结构、下单流程、平台服务与常见问题，帮助访问者在购物前完成必要核对。</p>
+        <p>平台政策、价格与配送时效随运营调整，实际信息以 Blibli 官方页面展示为准。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#kategori">品类频道</a></li>
+          <li><a href="#cara">下单流程</a></li>
+          <li><a href="#layanan">平台服务</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>购物准备</h4>
+        <ul>
+          <li><a href="#layanan">下单核对清单</a></li>
+          <li><a href="#cara">配送与支付说明</a></li>
+          <li><a href="#faq">退换货指引</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Blibli 主题首页 · 内容仅作购物参考，不构成平台官方承诺。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
