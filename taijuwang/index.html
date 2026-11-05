@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>泰剧网-泰剧在线观看_泰剧TV剧集_泰剧更新推荐</title>
+<meta name="description" content="泰剧网是一个专注泰国电视剧的内容站点，整理泰剧在线观看入口、热门泰剧推荐、剧集更新与演员资讯，帮助观众按类型与年份快速找到想看的泰剧。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e2a4a'/%3E%3Cpath d='M20 18h24v6H32v22h-6V28h-6z' fill='%23f4c14b'/%3E%3Ccircle cx='46' cy='44' r='7' fill='%23e8623f'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#1e2a4a;
+    --navy-2:#273559;
+    --gold:#f4c14b;
+    --coral:#e8623f;
+    --cream:#fbf7f0;
+    --paper:#ffffff;
+    --ink:#22283a;
+    --muted:#6b7285;
+    --line:#e6dfd2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.75;
+    font-size:16px;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{line-height:1.35;margin:0;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+  .eyebrow{
+    font-size:13px;letter-spacing:.18em;color:var(--coral);
+    font-weight:700;text-transform:uppercase;margin-bottom:10px;
+  }
+
+  /* header */
+  header.site{
+    background:var(--navy);
+    color:#fff;
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 14px rgba(20,26,44,.28);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .brand-mark{
+    width:38px;height:38px;border-radius:10px;background:var(--gold);
+    display:grid;place-items:center;flex-shrink:0;
+  }
+  .brand-mark svg{width:22px;height:22px;}
+  .brand-text{font-size:20px;font-weight:800;letter-spacing:.04em;color:#fff;}
+  nav.main ul{
+    display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px;
+  }
+  nav.main a{color:#d8dff0;padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+  nav.main a:hover,nav.main a:focus-visible{color:var(--gold);border-bottom-color:var(--gold);}
+  .nav-cta{
+    background:var(--coral);color:#fff;font-weight:700;font-size:14px;
+    padding:9px 18px;border-radius:999px;white-space:nowrap;
+    transition:.2s;
+  }
+  .nav-cta:hover{background:#f0744f;}
+  .menu-toggle{
+    display:none;background:none;border:1px solid rgba(255,255,255,.35);
+    color:#fff;border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;
+  }
+
+  /* hero */
+  .hero{
+    background:linear-gradient(160deg,#1e2a4a 0%,#2a3a66 62%,#37497c 100%);
+    color:#fff;
+    padding:64px 0 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    border-radius:50%;background:radial-gradient(circle,rgba(244,193,75,.22),transparent 68%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(34px,5vw,52px);
+    font-weight:900;letter-spacing:.02em;margin:0 0 18px;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.lead{
+    font-size:17px;color:#d5dcee;margin:0 0 26px;max-width:34em;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:15px;border-radius:999px;padding:12px 24px;
+    transition:.2s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gold);color:#2a2410;}
+  .btn-primary:hover{background:#ffd370;}
+  .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);}
+  .hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin:0;padding:0;list-style:none;}
+  .hero-stats strong{display:block;font-size:24px;color:var(--gold);font-weight:800;}
+  .hero-stats span{font-size:13px;color:#bfc8e0;}
+
+  .poster-card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:18px;padding:18px;
+    backdrop-filter:blur(4px);
+  }
+  .poster-art{
+    border-radius:12px;overflow:hidden;background:#111a30;
+    aspect-ratio:4/3;display:grid;place-items:center;
+  }
+  .poster-meta{padding-top:14px;}
+  .poster-meta b{display:block;font-size:15px;color:#fff;margin-bottom:4px;}
+  .poster-meta small{color:#b9c3dd;font-size:13px;}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .tag{
+    font-size:12px;padding:3px 10px;border-radius:999px;
+    background:rgba(244,193,75,.16);color:var(--gold);
+  }
+
+  /* sections */
+  section{padding:62px 0;}
+  section.alt{background:var(--paper);}
+  .sec-head{max-width:46em;margin-bottom:34px;}
+  .sec-head h2{font-size:clamp(23px,3vw,30px);font-weight:800;margin-bottom:10px;}
+  .sec-head p{color:var(--muted);margin:0;font-size:15.5px;}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:10px;
+    transition:.22s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(30,42,74,.1);}
+  .card h3{font-size:18px;font-weight:800;}
+  .card p{margin:0;font-size:14.5px;color:var(--muted);}
+  .card .ico{
+    width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+    background:#fdf1dd;
+  }
+  .card .ico svg{width:22px;height:22px;}
+
+  /* 剧目列表 */
+  .drama-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .drama{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .drama-thumb{
+    aspect-ratio:16/9;display:grid;place-items:center;color:#fff;
+    font-weight:800;font-size:15px;letter-spacing:.08em;
+  }
+  .drama-body{padding:16px 18px 20px;}
+  .drama-body h3{font-size:16.5px;font-weight:800;margin-bottom:6px;}
+  .drama-body p{font-size:14px;color:var(--muted);margin:0 0 12px;}
+  .meta-row{display:flex;gap:10px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;}
+  .meta-row span{background:#f4efe4;border-radius:6px;padding:2px 8px;}
+
+  /* 筛选 */
+  .filter-bar{
+    display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;
+  }
+  .chip{
+    font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);
+    background:var(--paper);cursor:pointer;color:var(--ink);font-family:inherit;
+    transition:.18s;
+  }
+  .chip:hover{border-color:var(--coral);color:var(--coral);}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .filter-note{font-size:13.5px;color:var(--muted);margin:0 0 18px;min-height:1.4em;}
+
+  /* 更新表 */
+  .update-table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--paper);border-radius:var(--radius);overflow:hidden;}
+  .update-table th{
+    text-align:left;background:var(--navy);color:#fff;font-weight:700;
+    padding:12px 16px;font-size:14px;white-space:nowrap;
+  }
+  .update-table td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+  .update-table tr:last-child td{border-bottom:none;}
+  .update-table td:first-child{font-weight:700;}
+  .state{font-size:12.5px;color:var(--coral);font-weight:700;}
+
+  /* 指南 */
+  .guide{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;}
+  .guide h3{font-size:19px;font-weight:800;margin-bottom:10px;}
+  .guide p{font-size:15px;color:#3d4557;margin:0 0 14px;}
+  .steps{list-style:none;padding:0;margin:0;counter-reset:s;}
+  .steps li{
+    counter-increment:s;position:relative;padding-left:44px;margin-bottom:18px;
+    font-size:15px;color:#3d4557;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:2px;
+    width:28px;height:28px;border-radius:50%;background:var(--gold);color:#2a2410;
+    font-weight:800;font-size:14px;display:grid;place-items:center;
+  }
+  .steps li b{color:var(--ink);}
+
+  /* 下载 / 行动 */
+  .download-box{
+    background:linear-gradient(140deg,#243255,#1a2340);
+    color:#fff;border-radius:20px;padding:40px;
+    display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+  }
+  .download-box h2{font-size:24px;font-weight:800;margin-bottom:8px;}
+  .download-box p{margin:0;color:#c3cce2;font-size:15px;max-width:38em;}
+  .btn-disabled{
+    background:var(--gold);color:#2a2410;opacity:.85;cursor:not-allowed;
+    pointer-events:none;
+  }
+
+  /* footer */
+  footer.site{
+    background:var(--navy);color:#aeb9d3;padding:44px 0 26px;font-size:14px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:28px;}
+  .foot-grid h4{color:#fff;font-size:15px;margin:0 0 12px;font-weight:800;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .foot-grid a:hover{color:var(--gold);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:13px;color:#8c99b8;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .grid-3,.drama-list{grid-template-columns:repeat(2,1fr);}
+    .guide{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .menu-toggle{display:inline-block;}
+    nav.main{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      background:var(--navy-2);padding:14px 4vw 18px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    nav.main.open{display:block;}
+    nav.main ul{flex-direction:column;gap:14px;}
+    .nav-cta{display:none;}
+    .hero{padding:44px 0 52px;}
+    .grid-3,.drama-list{grid-template-columns:1fr;}
+    section{padding:46px 0;}
+    .download-box{padding:26px;}
+    .update-table{font-size:13.5px;}
+    .update-table th,.update-table td{padding:10px 12px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="泰剧网 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 5h12v3h-4.5v11h-3V8H6z" fill="#1e2a4a"/>
+          <circle cx="18" cy="17.5" r="2.6" fill="#e8623f"/>
+        </svg>
+      </span>
+      <span class="brand-text">泰剧网</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    <nav class="main" id="mainNav" aria-label="主导航">
+      <ul>
+        <li><a href="#hot">热门泰剧</a></li>
+        <li><a href="#pick">选剧指南</a></li>
+        <li><a href="#update">更新一览</a></li>
+        <li><a href="#guide">观看说明</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#hot">开始找剧</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">泰国电视剧 · 剧集索引</p>
+        <h1>泰剧网</h1>
+        <p class="lead">泰剧网是一个专注泰国电视剧的内容站点，把热门泰剧、类型分类、播出更新与演员信息整理在一起，让你在追剧之前先看清一部剧讲什么、适合谁看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">浏览热门泰剧</a>
+          <a class="btn btn-ghost" href="#pick">按类型选剧</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>6</strong><span>常见题材分类</span></li>
+          <li><strong>3</strong><span>选剧参考维度</span></li>
+          <li><strong>每周</strong><span>更新条目整理</span></li>
+        </ul>
+      </div>
+      <aside class="poster-card" aria-label="本周推荐">
+        <div class="poster-art">
+          <svg viewBox="0 0 320 240" role="img" aria-label="泰剧剧集主题插画">
+            <rect width="320" height="240" fill="#0f1830"/>
+            <circle cx="248" cy="62" r="34" fill="#f4c14b" opacity=".85"/>
+            <path d="M0 190 L70 128 L128 168 L196 104 L260 150 L320 112 L320 240 L0 240 Z" fill="#2a3a66"/>
+            <path d="M0 214 L84 166 L150 200 L222 152 L320 196 L320 240 L0 240 Z" fill="#1b2545"/>
+            <rect x="34" y="52" width="86" height="10" rx="5" fill="#e8623f"/>
+            <rect x="34" y="72" width="58" height="8" rx="4" fill="#ffffff" opacity=".55"/>
+            <rect x="34" y="90" width="70" height="8" rx="4" fill="#ffffff" opacity=".3"/>
+          </svg>
+        </div>
+        <div class="poster-meta">
+          <b>本周编辑推荐</b>
+          <small>爱情 · 都市 · 家庭三类各选一部，附剧情要点</small>
+          <div class="tags">
+            <span class="tag">爱情</span>
+            <span class="tag">都市</span>
+            <span class="tag">家庭</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">热门泰剧</p>
+        <h2>按题材找到想看的泰剧</h2>
+        <p>泰剧的题材跨度很大，爱情、校园、家庭伦理、悬疑与古装各有稳定观众。下面按类型给出内容重点，帮助你判断一部剧是否对味。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.7-7 9-7 9z" stroke="#e8623f" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>爱情与都市</h3>
+          <p>以情感推进为主线，节奏偏慢，适合喜欢人物关系细腻、对白较多的观众。看之前留意男女主设定与集数长度。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#1e2a4a" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <h3>校园与青春</h3>
+          <p>多在校园场景展开，篇幅相对轻快，常与成长、友情线并行。适合一次连续观看多集，也便于入门泰剧。</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z" stroke="#f4c14b" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>悬疑与复仇</h3>
+          <p>剧情反转密集，信息点集中在前几集。观看前建议先了解主线设定，避免因跳过铺垫而看不懂人物动机。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="pick">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">选剧指南</p>
+        <h2>用三个条件缩小范围</h2>
+        <p>在泰剧网挑选剧目时，先按类型筛，再按年份与集数判断投入时间，最后看简介确认主线，通常能较快锁定目标。</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="按类型筛选剧目">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="romance">爱情</button>
+        <button class="chip" data-filter="campus">校园</button>
+        <button class="chip" data-filter="family">家庭</button>
+        <button class="chip" data-filter="mystery">悬疑</button>
+      </div>
+      <p class="filter-note" id="filterNote" aria-live="polite">当前显示全部剧目条目。</p>
+
+      <div class="drama-list" id="dramaList">
+        <article class="drama" data-cat="romance">
+          <div class="drama-thumb" style="background:#2a3a66">爱情 · 都市</div>
+          <div class="drama-body">
+            <h3>都市情感线</h3>
+            <p>以成年人的感情选择为主线，冲突集中在家庭与职业之间，人物动机较清楚。</p>
+            <div class="meta-row"><span>爱情</span><span>都市</span><span>长剧集</span></div>
+          </div>
+        </article>
+        <article class="drama" data-cat="campus">
+          <div class="drama-thumb" style="background:#3a4d80">校园 · 青春</div>
+          <div class="drama-body">
+            <h3>校园成长线</h3>
+            <p>围绕校园生活与社团活动展开，节奏轻快，适合作为泰剧入门的第一部。</p>
+            <div class="meta-row"><span>校园</span><span>青春</span><span>短剧集</span></div>
+          </div>
+        </article>
+        <article class="drama" data-cat="family">
+          <div class="drama-thumb" style="background:#4a3f66">家庭 · 伦理</div>
+          <div class="drama-body">
+            <h3>家族关系线</h3>
+            <p>多人物群像，围绕继承与代际矛盾展开，需要留意人物称谓与关系图。</p>
+            <div class="meta-row"><span>家庭</span><span>群像</span><span>长剧集</span></div>
+          </div>
+        </article>
+        <article class="drama" data-cat="mystery">
+          <div class="drama-thumb" style="background:#5a3550">悬疑 · 复仇</div>
+          <div class="drama-body">
+            <h3>悬念反转线</h3>
+            <p>主线围绕旧案重查推进，前几集信息量大，建议按顺序连续观看。</p>
+            <div class="meta-row"><span>悬疑</span><span>复仇</span><span>中等长度</span></div>
+          </div>
+        </article>
+        <article class="drama" data-cat="romance">
+          <div class="drama-thumb" style="background:#2f4468">爱情 · 古装</div>
+          <div class="drama-body">
+            <h3>年代情感线</h3>
+            <p>背景设定在特定年代，服装与场景是看点，情感线推进较慢。</p>
+            <div class="meta-row"><span>爱情</span><span>年代</span><span>长剧集</span></div>
+          </div>
+        </article>
+        <article class="drama" data-cat="family">
+          <div class="drama-thumb" style="background:#3f4a5e">家庭 · 生活</div>
+          <div class="drama-body">
+            <h3>日常群像线</h3>
+            <p>以日常生活切入，冲突温和，适合不想追悬念、只想轻松观看的观众。</p>
+            <div class="meta-row"><span>家庭</span><span>生活</span><span>中等长度</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="update">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">更新一览</p>
+        <h2>泰剧网条目更新记录</h2>
+        <p>下表记录站内条目的整理与补充情况，说明每类内容最近补了什么，方便你判断哪些栏目已经有了可用信息。</p>
+      </div>
+      <table class="update-table">
+        <thead>
+          <tr><th>栏目</th><th>最近整理内容</th><th>状态</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>热门泰剧</td><td>补充爱情、校园、家庭、悬疑四类题材的观看提示</td><td class="state">已整理</td></tr>
+          <tr><td>选剧指南</td><td>加入按类型筛剧的交互，并给出集数判断建议</td><td class="state">已整理</td></tr>
+          <tr><td>观看说明</td><td>整理查找剧集与确认简介的步骤</td><td class="state">已整理</td></tr>
+          <tr><td>演员与剧照</td><td>条目仍在补充中，暂以文字介绍为主</td><td class="state">整理中</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="alt" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">观看说明</p>
+        <h2>在泰剧网找一部剧的步骤</h2>
+        <p>泰剧网以文字整理为主，重点是把剧集信息和题材特点说清楚，具体播放以你实际使用的播出平台为准。</p>
+      </div>
+      <div class="guide">
+        <div>
+          <h3>四步完成查找</h3>
+          <ol class="steps">
+            <li><b>确定类型。</b>先想清楚要看爱情、校园、家庭还是悬疑，避免在长列表里来回翻找。</li>
+            <li><b>核对集数。</b>长剧集投入时间多，短剧集适合先试水，按自己的时间安排选择。</li>
+            <li><b>阅读简介。</b>看完主线设定与人物关系，再判断剧情节奏是否符合预期。</li>
+            <li><b>确认播出。</b>到对应平台的剧集页核对剧名、集数与字幕情况，再决定是否开追。</li>
+          </ol>
+        </div>
+        <div>
+          <h3>容易被忽略的细节</h3>
+          <p>泰剧的剧名在翻译上常有差异，同一部剧可能出现多个中文名。查找时可以用主演姓名或英文原名交叉确认，减少找错版本的情况。</p>
+          <p>另外，部分剧集在播出期间会调整集数或更新时间，标称长度与实际播出可能存在出入。以平台剧集页的信息为最终依据，比只看简介更稳妥。</p>
+          <p>泰剧网的内容以题材梳理和观剧参考为主，不替代平台提供的播放服务。看到感兴趣的条目后，记下剧名再转去平台核对，效率会更高。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">常见问题</p>
+        <h2>关于泰剧网的几个问题</h2>
+        <p>以下回答围绕站内内容范围与使用方式，不涉及具体平台的播放权限与地区限制。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>泰剧网提供在线播放吗？</h3>
+          <p>站内以剧集介绍、题材分类和观剧参考为主，播放需前往对应的播出平台，具体可用情况以平台页面为准。</p>
+        </article>
+        <article class="card">
+          <h3>怎么快速找到一部剧？</h3>
+          <p>先用类型筛选缩小范围，再按集数与简介确认。剧名翻译不一致时，用主演姓名或英文原名交叉核对。</p>
+        </article>
+        <article class="card">
+          <h3>推荐内容会持续补充吗？</h3>
+          <p>会。热门泰剧与选剧指南按题材逐步整理，演员与剧照相关条目仍在补充中，具体进度见更新一览。</p>
+        </article>
+      </div>
+
+      <div class="download-box" style="margin-top:40px;">
+        <div>
+          <h2>下载泰剧网观剧清单</h2>
+          <p>将题材分类与集数判断整理成一份清单，便于离线查看。当前版本仍在整理中，下载入口稍后开放。</p>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>泰剧网</h4>
+        <p style="margin:0;color:#a3aecb;line-height:1.8;">专注泰国电视剧的内容整理站点，提供题材分类、选剧参考与更新记录，帮助观众更快找到想看的方向。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <ul>
+          <li><a href="#hot">热门泰剧</a></li>
+          <li><a href="#pick">选剧指南</a></li>
+          <li><a href="#update">更新一览</a></li>
+          <li><a href="#guide">观看说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容说明</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#update">整理进度</a></li>
+          <li><a href="#guide">查找步骤</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 泰剧网 · 内容以剧集介绍与观剧参考为主</span>
+      <span>播放服务以对应平台页面为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A'){
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+
+    var chips = document.querySelectorAll('.chip');
+    var items = document.querySelectorAll('#dramaList .drama');
+    var note = document.getElementById('filterNote');
+    var names = {all:'全部', romance:'爱情', campus:'校园', family:'家庭', mystery:'悬疑'};
+    chips.forEach(function(chip){
+      chip.addEventListener('click', function(){
+        chips.forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        var key = chip.getAttribute('data-filter');
+        var shown = 0;
+        items.forEach(function(item){
+          var match = (key === 'all' || item.getAttribute('data-cat') === key);
+          item.style.display = match ? '' : 'none';
+          if(match) shown++;
+        });
+        note.textContent = '当前显示' + (key === 'all' ? '全部' : names[key]) + '剧目条目，共 ' + shown + ' 部。';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
